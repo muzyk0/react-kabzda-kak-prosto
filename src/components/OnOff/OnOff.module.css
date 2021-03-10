@@ -1,0 +1,15 @@
+.turnOn {
+    background: green;
+}
+
+.turnOff {
+    background: red;
+}
+
+.divRadius {
+    margin-left: 10px;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
