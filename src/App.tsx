@@ -17,11 +17,11 @@ function App() {
     return (
         <div>
             {/*<OnOff on={switchOn} onChange={setSwitchOn}/>*/}
-            <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
-            {/*<UncontrolledAccordion titleValue={'Users'}/>
-            <Rating value={ratingValue}
-                    onClick={setRatingValue}/>
-            <UncontrolledRating/>*/}
+            {/*<UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}*/}
+            <UncontrolledAccordion titleValue={'Users'}/>
+            {/*<Rating value={ratingValue}*/}
+            {/*        onClick={setRatingValue}/>*/}
+            {/*<UncontrolledRating/>*!/*/}
             {/*<Accordion titleValue={'Menu'} collapsed={accordionCollapsed} onChange={setAccordionCollapsed}/>*/}
 
                 {/*<PageTitle title={'This is APP Component'}/>
