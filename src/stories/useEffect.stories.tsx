@@ -1,0 +1,32 @@
+import React, {useEffect, useState} from 'react';
+
+export default {
+    title: 'UseEffect demo'
+}
+
+export const UseEffect = () => {
+    const [fake, setFake] = useState(1)
+    const [counter, setCounter] = useState(1)
+
+    console.log('component render')
+
+    useEffect(() => {
+        console.log('use effect every render')
+        document.title = counter.toString()
+    })
+    useEffect(() => {
+        console.log('use effect only first render')
+        document.title = counter.toString()
+    }, [])
+    useEffect(() => {
+        console.log('use effect first render and every counter change')
+        document.title = counter.toString()
+    }, [counter])
+
+    return <>
+        {fake}
+        {counter}
+        <button onClick={() => setFake(state => state + 1)}>fake+</button>
+        <button onClick={() => setCounter(state => state + 1)}>counter+</button>
+    </>
+}
