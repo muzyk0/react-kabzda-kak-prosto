@@ -46,21 +46,3 @@ export const SetTimeoutExample = () => {
         counter: {counter}
     </>
 }
-
-export const DateExample     = () => {
-    const [date, setDate] = useState(() => {
-        return new Date()
-    })
-    console.log(date)
-    console.log('timeout example render')
-
-    useEffect(() => {
-        setInterval(() => {
-            setDate(new Date())
-        }, 1000)
-    }, [])
-
-    return <>
-        date: {`${date.getFullYear()}.${date.getMinutes()}.${date.getSeconds()}`}
-    </>
-}
