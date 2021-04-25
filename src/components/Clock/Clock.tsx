@@ -1,10 +1,20 @@
 import React, {useEffect, useState} from 'react';
+import {findAllByDisplayValue} from '@testing-library/react';
+import {DigitalClock} from './DigitalClock';
+import {AnalogClock} from './AnalogClock';
 
 const got2digitsString = (number: number) => {
     return number <= 10 ? '0' + number : number
 }
 
-export const Clock = () => {
+interface PropsType {
+    mode?: 'digital' | 'analog'
+}
+export interface ClockViewPropsType {
+    date: Date
+}
+
+export const Clock = (props: PropsType) => {
 
     const [date, setDate] = useState(() => {
         return new Date()
@@ -35,12 +45,18 @@ export const Clock = () => {
 
     const time = `${got2digitsString(date.getFullYear())}:${got2digitsString(date.getMinutes())}:${got2digitsString(date.getSeconds())}`
 
-    return <>
-        date: {time}
+    let view;
 
-        <div style={styleClock}>
-            <h1 style={{fontWeight: 'bold',
-                fontSize: '30px',}}>{time}</h1>
-        </div>
+    switch (props.mode) {
+        case 'analog':
+            view = <AnalogClock date={date} />
+            break
+        case 'digital':
+        default:
+            view = <DigitalClock date={date} />
+    }
+
+    return <>
+        {view}
     </>
 }
